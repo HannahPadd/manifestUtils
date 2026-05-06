@@ -8,6 +8,17 @@ plugins {
     `maven-publish`
 }
 
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 group = "dev.hannahpadd"
 version = "0.1.0"
 
@@ -25,10 +36,6 @@ dependencies {
 
 
     testImplementation(kotlin("test"))
-}
-
-kotlin {
-    jvmToolchain(17)
 }
 
 tasks.withType<KotlinCompile> {
